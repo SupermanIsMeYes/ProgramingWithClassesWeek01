@@ -34,12 +34,12 @@ class Program
         else
         {
             Console.WriteLine("Your grade is an F");
-            pass = "fail"
+            pass = "fail";
         }
 
         Console.WriteLine($"Your grade is an {letter}");
         
-        if (pass = "pass")
+        if (pass == "pass")
         {
             Console.WriteLine("Congrats you pass!!");
         }
