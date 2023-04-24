@@ -33,7 +33,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Your grade is an F");
+            //Console.WriteLine("Your grade is an F");
             pass = "fail";
         }
 
