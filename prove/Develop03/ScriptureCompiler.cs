@@ -1,5 +1,5 @@
 namespace develop02 {
-    class Scripture
+    class ScriptureCompiler
     {
         
         

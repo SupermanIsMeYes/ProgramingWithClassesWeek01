@@ -1,5 +1,5 @@
 namespace develop02 {
-    class Words
+    class WordSpliter
     {
         
         
