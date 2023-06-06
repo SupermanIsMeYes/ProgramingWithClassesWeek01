@@ -45,12 +45,15 @@ namespace develop03 {
             Console.WriteLine("what number is you scripture in the list? ");
             scriptureNum = Convert.ToInt32(Console.ReadLine());
             string continueIt = "";
+
             WordSpliter scriptureSplit = new WordSpliter();
             string[] scripture = scriptureSplit.getSplitScripture(scriptureNum);
             List<string> scriptureList = new List<string>(scripture);
+
             WordSpliter scriptureBool = new WordSpliter();
             string[] boolString = scriptureBool.getStringBool(scripture);
             List<string> boolList = new List<string>(boolString);
+            
             ReferenceDatabase reference = new ReferenceDatabase();
             string referenceScripture = reference.getReference(scriptureNum);
 

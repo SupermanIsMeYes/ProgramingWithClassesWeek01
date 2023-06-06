@@ -6,8 +6,6 @@ namespace develop03 {
     class WordSpliter
     {
         
-        //ReferenceDatabase scriptureText = new ReferenceDatabase();
-        //ReferenceDatabase scriptureReference = new ReferenceDatabase();
 
         public string[] getSplitScripture(int index)
         {
