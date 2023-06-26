@@ -4,6 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        
+        Goal myGoalLists = new Goal();
+        myGoalLists.createGoal();
+        myGoalLists.recordGoal(myGoalLists.type, myGoalLists.name, myGoalLists.discription, myGoalLists.alocatedPoints);
+        int counter = 0;
+        foreach (List<string> goal in myGoalLists.goals)
+        {
+            counter += 1;
+            Console.WriteLine($"{counter}. {goal[1]} ({goal[2]})");
+        }
     }
 }
