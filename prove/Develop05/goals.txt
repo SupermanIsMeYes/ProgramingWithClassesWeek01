@@ -1,0 +1,3 @@
+1~Simple~Run~ ~0~0~15~~0
+2~Eternal goal~don't be fat~ ~0~0~20~~0
+3~Checked goal~lift~ ~0~3~30~1000~0
