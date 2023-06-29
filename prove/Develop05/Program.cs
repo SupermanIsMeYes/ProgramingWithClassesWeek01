@@ -8,6 +8,9 @@ class Program
     {
             bool continueit = true;
             Goal myGoalLists = new Goal();
+            Console.WriteLine();
+            Console.WriteLine("Points: 0");
+            Console.WriteLine();
             while (continueit)
             {
             
