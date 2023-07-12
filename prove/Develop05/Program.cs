@@ -90,7 +90,8 @@ class Program
                     Console.WriteLine();
                     if (myGoalLists.goals[int.Parse(number) - 1][0] == "1")
                     {
-                        Simple.recordEventSimple(myGoalLists.goals,number);
+                        Simple temp = new Simple();
+                        temp.recordEvent(myGoalLists.goals,number);
                     }
                     if (myGoalLists.goals[int.Parse(number) - 1][0] == "2")
                     {

@@ -1,7 +1,7 @@
 
 class Simple : Goal
 {
-    public static List<List<string>> recordEventSimple(List<List<string>> goals, string number)
+    public override List<List<string>> recordEvent(List<List<string>> goals, string number)
     {
         int point = 0;
         int total = 0;

@@ -49,5 +49,9 @@ class Goal
         goals.Add(new List<string> { type, name, discription, unChecked, numberCompleted, numberToComplete, alocatedPoints, bonus, points});
     }
 
-
+    public virtual List<List<string>> recordEvent(List<List<string>> goals, string number)
+    {
+        List<List<string>> newList = new List<List<string>>(goals);
+        return newList;
+    }
 }
