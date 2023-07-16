@@ -1,0 +1,3 @@
+2022/01/01,E,   -200.00,              first,  Pay Pal
+2023/01/01,I,    100.00,              third,Sold Item
+2022/02/02,I,    250.00,              ghost,     Gift

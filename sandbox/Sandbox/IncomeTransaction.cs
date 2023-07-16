@@ -4,11 +4,22 @@ class IncomeTransaction : Transactions{
 
         LayoutBuilder LB = new LayoutBuilder();
 
-        public override void newTransaction(){
+        public override void newTransaction(LayoutBuilder layoutBuilder){
 
-            Console.WriteLine();
-            Console.Write("Enter date (YYYY/MM/DD): ");
-            string date = Console.ReadLine();
+            string date = "";
+            while (true)
+            {
+                Console.Write("Enter date (YYYY/MM/DD): ");
+                date = Console.ReadLine();
+                int len = date.Length;
+                if (len == 10)
+                {
+                    break;
+                }
+                Console.WriteLine("Invaild input");
+            }
+
+
             string amount;
 
             while (true)
@@ -24,27 +35,31 @@ class IncomeTransaction : Transactions{
                 Console.WriteLine("Amount should less then 9999999.99.");
             }
 
+            float floatNumber = float.Parse(amount);
+            string formattedNumber = floatNumber.ToString("0.00");
+            amount = formattedNumber;
+
             string description;
 
             while (true)
             {
-                Console.Write("Enter description (<= 14 characters): ");
+                Console.Write("Enter description (<= 19 characters): ");
                 description = Console.ReadLine();
 
-                if (description.Length <= 14)
+                if (description.Length <= 19)
                 {
                     break;
                 }
 
-                Console.WriteLine("Description should be 14 characters or less.");
+                Console.WriteLine("Description should be 19 characters or less.");
             }
 
             string card = "";
 
-            Console.WriteLine("1. Discover");
-            Console.WriteLine("2. Capital 1");
-            Console.WriteLine("3. Bank");
-            Console.WriteLine("4. Pay Pal");
+            Console.WriteLine("1. Work");
+            Console.WriteLine("2. Gift");
+            Console.WriteLine("3. Sold Item");
+            Console.WriteLine("4. Affiliate");
 
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
@@ -52,25 +67,25 @@ class IncomeTransaction : Transactions{
             switch (choice)
             {
                 case "1":
-                    card = " Discover";
+                    card = "     Work";
                     break;
                 case "2":
-                    card = "Capital 1";
+                    card = "     Gift";
                     break;
                 case "3":
-                    card = "     Bank";
+                    card = "Sold Item";
                     break;
                 case "4":
-                    card = "  Pay Pal";
+                    card = "Affiliate";
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Please try again.");
                     break;
             }
 
-            if (description.Length < 14)
+            if (description.Length < 19)
             {
-                description = description.PadLeft(14);
+                description = description.PadLeft(19);
             }
             if (amount.Length < 10)
             {
@@ -78,7 +93,7 @@ class IncomeTransaction : Transactions{
             }
 
             List<string> entry = new List<string> { date, "I", amount, description, card };
-            LB.transactions.Add(entry);
+            layoutBuilder.transactions.Add(entry);
             Console.WriteLine();
 
         }

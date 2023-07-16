@@ -4,39 +4,56 @@ class ExpenseTransaction : Transactions{
 
         LayoutBuilder LB = new LayoutBuilder();
 
-        public override void newTransaction(){
+        public override void newTransaction(LayoutBuilder layoutBuilder){
 
             Console.WriteLine();
-            Console.Write("Enter date (YYYY/MM/DD): ");
-            string date = Console.ReadLine();
+
+            string date = "";
+            while (true)
+            {
+                Console.Write("Enter date (YYYY/MM/DD): ");
+                date = Console.ReadLine();
+                int len = date.Length;
+                if (len == 10)
+                {
+                    break;
+                }
+                Console.WriteLine("Invaild input");
+            }
+
             string amount;
+
 
             while (true)
             {
-                Console.Write("Enter amount (max 9999999.99): ");
+                Console.Write("Enter amount (max 999999.99): ");
                 amount = Console.ReadLine();
 
-                if (amount.Length <= 10)
+                if (amount.Length <= 9)
                 {
                     break;
                 }
 
-                Console.WriteLine("Amount should less then 9999999.99.");
+                Console.WriteLine("Amount should less then 999999.99.");
             }
+
+            float floatNumber = float.Parse(amount);
+            string formattedNumber = floatNumber.ToString("0.00");
+            amount = "-" + formattedNumber;
 
             string description;
 
             while (true)
             {
-                Console.Write("Enter description (<= 14 characters): ");
+                Console.Write("Enter description (<= 19 characters): ");
                 description = Console.ReadLine();
 
-                if (description.Length <= 14)
+                if (description.Length <= 19)
                 {
                     break;
                 }
 
-                Console.WriteLine("Description should be 14 characters or less.");
+                Console.WriteLine("Description should be 19 characters or less.");
             }
 
             string card = "";
@@ -68,9 +85,9 @@ class ExpenseTransaction : Transactions{
                     break;
             }
 
-            if (description.Length < 14)
+            if (description.Length < 19)
             {
-                description = description.PadLeft(14);
+                description = description.PadLeft(19);
             }
             if (amount.Length < 10)
             {
@@ -78,7 +95,7 @@ class ExpenseTransaction : Transactions{
             }
 
             List<string> entry = new List<string> { date, "E", amount, description, card };
-            LB.transactions.Add(entry);
+            layoutBuilder.transactions.Add(entry);
             Console.WriteLine();
 
         }

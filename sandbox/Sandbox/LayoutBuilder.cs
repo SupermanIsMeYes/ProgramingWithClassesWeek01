@@ -3,16 +3,15 @@ class LayoutBuilder {
 
     public List<List<string>> transactions = new List<List<string>>();
 
-    public List<string> totals = new List<string>();
+    public List<List<string>> totals = new List<List<string>>();
 
-    public List<List<string>> monthlys = new List<List<string>>();
 
     private int numberOfYears = 0;
     
  
 
 
-    public void BuildLayout(List<List<string>> transactions, int numberOfYears, List<string> totals, List<List<string>> monthlys)
+    public void BuildLayout(List<List<string>> transactions)
     {
         numberOfYears = totals.Count;
 
@@ -23,19 +22,19 @@ class LayoutBuilder {
         foreach (List<string> list in transactions)
                 {
                     Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                    Console.WriteLine($"| {2023/01/01} | {1} | {10} | {14} | {9} |");
+                    Console.WriteLine($"| {list[0]} | {list[1]} | {list[2]} | {list[3]} | {list[4]} |");
                 }
         Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-        Console.WriteLine("");
-        foreach (List<string> list in transactions)
+        foreach (List<string> list in totals)
         {
+                Console.WriteLine("");
                 Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                Console.WriteLine($"| Year Total: {20}                             |");
+                Console.WriteLine($"| Year Total: {list[12]}                             |");
                 Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                Console.WriteLine($"| Jan: {13} | Feb: {13} | Mar: {13} |");
-                Console.WriteLine($"| Apr: {13} | May: {13} | Jun: {13} |");
-                Console.WriteLine($"| Jul: {13} | Aug: {13} | Sep: {13} |");
-                Console.WriteLine($"| Oct: {13} | Nov: {13} | Dec: {13} |");
+                Console.WriteLine($"| Jan: {list[0]} | Feb: {list[1]} | Mar: {list[2]} |");
+                Console.WriteLine($"| Apr: {list[3]} | May: {list[4]} | Jun: {list[5]} |");
+                Console.WriteLine($"| Jul: {list[6]} | Aug: {list[7]} | Sep: {list[8]} |");
+                Console.WriteLine($"| Oct: {list[9]} | Nov: {list[10]} | Dec: {list[11]} |");
                 Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         }
 
