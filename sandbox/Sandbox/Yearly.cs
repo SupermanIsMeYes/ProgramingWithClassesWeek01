@@ -1,4 +1,4 @@
-class Yearly : Totals{
+class Yearly {
 
 private double totalAmount = 0;
 
