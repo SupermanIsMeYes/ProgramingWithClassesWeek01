@@ -17,6 +17,10 @@ class Loader{
             }
         }
 
+        Console.WriteLine();
+        Console.WriteLine("Transactions Loaded to program");
+        Console.WriteLine();
+
         return transactions;
     }
 }

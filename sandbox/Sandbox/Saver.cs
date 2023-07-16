@@ -9,5 +9,8 @@ class Saver{
                 writer.WriteLine(line);
             }
         }
+        Console.WriteLine();
+        Console.WriteLine("Transactions saved");
+        Console.WriteLine();
     }
 }
